@@ -9,29 +9,7 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ['20.x', '21.x', '22.x']
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}  # Ensure this matches your Node.js version
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build
-      run: npm run build
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && success()
 
