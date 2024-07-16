@@ -21,6 +21,7 @@
     "discord-player": "^6.6.10",
     "discord.js": "^14.15.3",
     "fast-glob": "^3.3.2",
+    "jest": "^29.7.0",
     "ytdl-core": "^4.11.5",
     "zod": "^3.23.8"
   },
