@@ -1,6 +1,7 @@
 import { bootstrapApp } from "#base";
 import { Player } from "discord-player";
 import { YoutubeiExtractor } from "discord-player-youtubei";
+import "./tools/index.js"
 
 await bootstrapApp({ 
     workdir: import.meta.dirname,
@@ -12,7 +13,6 @@ await bootstrapApp({
                 quality: "highestaudio",
             }
         });
-        player.extractors.loadDefault();
         player.extractors.register(YoutubeiExtractor, {})
     },
 });
