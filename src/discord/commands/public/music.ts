@@ -196,10 +196,10 @@ new Command({
             }
             case "search": {
                 const trackUrl = options.getString("search", true);
-                const searchEngine = options.getString("engine", true) as SearchQueryType;
+                const SearchEngine = options.getString("engine", true) as SearchQueryType;
                 try {
                     const {track } = await player.play(voiceChannel as never, trackUrl, {
-                        searchEngine, nodeOptions: { metadata }
+                        searchEngine: SearchEngine, nodeOptions: { metadata }
                     });
 
                     const text = queue?.size ? "Added to queue" : "Playing now";
